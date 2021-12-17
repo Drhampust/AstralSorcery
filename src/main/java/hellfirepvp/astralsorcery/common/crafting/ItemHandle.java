@@ -204,7 +204,7 @@ public final class ItemHandle {
                 }
                 try {
                     return COMPOUND_CTOR.newInstance(ingredients);
-                } catch (Exception e) {}
+                } catch (Exception ignored) {}
         }
         return Ingredient.EMPTY;
     }
@@ -315,7 +315,7 @@ public final class ItemHandle {
                 return false;
             }
 
-            for (ItemStack thisStack : this.matchingStacks) {
+            for (ItemStack thisStack : this.getMatchingStacks()) {
                 if (ItemComparator.compare(thisStack, other,
                         ItemComparator.Clause.ITEM,
                         ItemComparator.Clause.META_WILDCARD,
@@ -327,7 +327,7 @@ public final class ItemHandle {
         }
     }
 
-    public static enum Type {
+    public enum Type {
 
         OREDICT,
         STACK,

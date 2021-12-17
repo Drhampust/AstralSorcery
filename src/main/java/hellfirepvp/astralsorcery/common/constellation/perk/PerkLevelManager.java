@@ -126,6 +126,6 @@ public class PerkLevelManager extends ConfigEntry {
     public void loadFromConfig(Configuration cfg) {
         this.totalExpLevelRequired.clear();
 
-        LEVEL_CAP = cfg.getInt(getKey() + "Cap", getConfigurationSection(), LEVEL_CAP, 1, 100, "Sets the max level for the perk tree levels.");
+        LEVEL_CAP = cfg.getInt(getKey() + "Cap", getConfigurationSection(), LEVEL_CAP, 1, Integer.MAX_VALUE, "Sets the max level for the perk tree levels.");
     }
 }
